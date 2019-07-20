@@ -1,0 +1,47 @@
+/*.barraDeNavegar{
+	position:relative;
+	width:450px;
+	float:left;
+	margin:8px 0px 0px 40px
+}*/
+.pagamento{
+    color: #ccc;
+}
+.Produto_um{
+    padding-top: 20px;
+}
+.NomeDoProduto{
+	color:white;
+    margin-top: 0;
+}
+.DetalhesDoProduto{
+	color:gray;
+}
+ #rodapeDoSite{
+	 width:100%;
+	 height:48px;
+	 background-color:dimgrey;
+ }
+ .rodape{
+	 margin-top:5px;
+	 padding:5px 0px;
+	 width:100%;
+	 height:48px;
+	 background-color:dimgrey;
+ }
+ .rodapeDoRodape{
+	 float:left;
+	 padding:3px 3px;
+	 margin-left:450px;
+	 margin-top:-5px;
+ }
+ .slogan{
+	 padding:3px 3px;
+	 color:white;
+	 float:right;
+	 margin-right:435px;
+ }
+ .rodapeDoRodape img{
+	width:156px;
+	height:40px;
+ }
