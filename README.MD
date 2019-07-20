@@ -39,3 +39,6 @@ Sistema de compra
 Sistema de carrinho de compra (?)(novas tabelas criadas por esquecimento das anteriores)
 Sistema de busca 
 Adicionar produtos no carrinho (precisando de melhorias na eficiência mas funciona)
+
+
+Sei lá
