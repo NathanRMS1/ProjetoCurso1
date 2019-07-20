@@ -1,5 +1,5 @@
 ---Versão 0.9.9---
-20/06/19
+
 Novo:
 
 Problemas:
