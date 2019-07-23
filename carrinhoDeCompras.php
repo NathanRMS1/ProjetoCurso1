@@ -22,35 +22,35 @@ while($listaCarrinho=$exeQrCarrinho->fetch_assoc()){
     $exeProd=$conectar->query($prod)or die(mysql_error());
     while($dadosCarrinho=$exeProd->fetch_assoc()){
         ?>
-        <div class="ListaDeProdutosS">
+        <div class="ListaDeProdutosS row bg-secondary text-white">
             <div class="col-md-2">
                 <img class="produtoNaLista" src="<?php echo $dadosCarrinho['img']?>" data-zoom-image="<?php echo $dadosCarrinho['img']?>" title="produto na lista" id="zoom_01">
             </div>
-            <div class="titulo_descri qq">          
+            <div class="col-md-10">
                 <h2 class="H-titulo">
                     <?php echo $dadosCarrinho['tipo_produto']." ".$dadosCarrinho['marca']." ".$dadosCarrinho['titulo_produto'];?>
                 </h2>
                 <span class="H-subititulo">
                     <?php echo $dadosCarrinho['detalhes_produto']?>
                 </span>
-            </div>
-            <div class="BotsEmLista">
-                <a href="index.php?url=Produto&id=<?php echo $dadosCarrinho['id']?>&car=<?php echo $idC?>" class="linkProdutos"><button type="button" class="btn btn-info BotsLista">Detalhes</button></a>
-                <a href="index.php?url=carrinhoCompras&Produto=<?php echo $dadosCarrinho['id']?>&car=<?php echo $idC?>" class="AddCarrinho"><button type="button" class="btn btn-warning BotsLista">Comprar</button></a>
-            </div>
-            <div class="PrecosEmLista">
-                <span class="precoAvista">
-                    <b> 
-                    <?php
-                    $precoProd1 = $dadosCarrinho['preco'];
-                    $precoProd = number_format($precoProd1,'2',',','.');
-                    echo 'R$'.$precoProd.'<br>'.$dadosCarrinho['meio_pagamento'];
-                    ?></b>
-                </span>
-                <br>
-                <span class="Estoque">
-                    <b><?php echo 'Há '.$dadosCarrinho['qtd_estoque'].' no estoque'?></b>
-                </span>
+                <div class="BotsEmLista">
+                    <a href="index.php?url=Produto&id=<?php echo $dadosCarrinho['id']?>&car=<?php echo $idC?>" class="linkProdutos"><button type="button" class="btn btn-info BotsLista">Detalhes</button></a>
+                    <a href="index.php?url=carrinhoCompras&Produto=<?php echo $dadosCarrinho['id']?>&car=<?php echo $idC?>" class="AddCarrinho"><button type="button" class="btn btn-warning BotsLista">Comprar</button></a>
+                </div>
+                <div class="PrecosEmLista">
+                    <span class="precoAvista">
+                        <b> 
+                        <?php
+                        $precoProd1 = $dadosCarrinho['preco'];
+                        $precoProd = number_format($precoProd1,'2',',','.');
+                        echo 'R$'.$precoProd.'<br>'.$dadosCarrinho['meio_pagamento'];
+                        ?></b>
+                    </span>
+                    <br>
+                    <span class="Estoque">
+                        <b><?php echo 'Há '.$dadosCarrinho['qtd_estoque'].' no estoque'?></b>
+                    </span>
+                </div>
             </div>
         </div>
         <?php

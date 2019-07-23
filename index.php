@@ -31,8 +31,23 @@ if(isset($_GET['logout'])){
         <div class="container-fluid">
             <section class="ConteudoDoSite">
                 <?php
-                if(isset($_GET['url'])):$url = $_GET['url'];else: $url = 'Home';endif;
-				if(file_exists($url.'.php')){
+                if(isset($_GET['url'])){
+                    $url = $_GET['url'];
+                    if (in_array($url,["Gabinete","PcGamer","Teclado","Mouse","HeadSet","Monitor"])){include_once "paginas.php";}else{
+                        if(file_exists($url.'.php')){
+                            switch($url){
+                                case $url:include_once $url . '.php'; break;
+
+                                default: include_once '404.php';
+                            }
+                        }else{
+                            include_once '404.php';
+                        }
+                    }
+                }else{
+                    include_once 'Home.php';
+                }
+				/*if(file_exists($url.'.php')){
 					switch($url){
 						case $url:include_once $url . '.php'; break;
 
@@ -40,7 +55,7 @@ if(isset($_GET['logout'])){
 					}
 				}else{
 					include_once '404.php';
-				}
+				}*/
                 ?>
             </section>
         </div>

@@ -29,6 +29,7 @@ $conexao= new mysqli($host,$user,$pass,$db);
 
 /*
 BANCO DE DADOS:
+CREATE DATABASE pessoas COLLATE utf8_general_mysql500_ci;
 CREATE TABLE usuario(id int(11) PRIMARY KEY AUTO_INCREMENT,nome varchar(255),email varchar(255),senha varchar(255))ENGINE INNODB;
 */
 ?>

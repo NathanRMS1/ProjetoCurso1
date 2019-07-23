@@ -147,3 +147,6 @@ article.conteudo{
 .escondido{
     visibility: hidden;
 }
+.ListaDeProdutosS > .col-md-2 > img{
+    width: 100%;
+}

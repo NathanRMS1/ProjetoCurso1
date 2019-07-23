@@ -11,8 +11,10 @@ if(isset($_GET['car'])){
     $car=$_GET['car'];
     if(isset($_POST['ComprarProdutoCar'])){
         $produto = $_GET['Produto'];
-        include_once 'updateNaTabela.php';
-        include_once 'updateNaOutraTabela.php';
+        $update= "UPDATE produtos SET qtd_estoque = qtd_estoque -1 WHERE id = $produto";
+        $upValor=$conectar->query($update);
+        $update= "DELETE FROM carrinho WHERE id = '$car'";
+        $upValor=$conectar->query($update);
         include_once 'finalizarCompra.php';
     }else{
         include_once 'carrinhoCompras1.php';
@@ -20,7 +22,8 @@ if(isset($_GET['car'])){
 }else{
     if(isset($_POST['ComprarProduto'])){
         $produto = $_GET['Produto'];
-        include_once 'updateNaTabela.php';
+        $update= "UPDATE produtos SET qtd_estoque = qtd_estoque -1 WHERE id = $produto";
+        $upValor=$conectar->query($update);
         include_once 'finalizarCompra.php';
     }else{
         include_once 'carrinhoCompras1.php';

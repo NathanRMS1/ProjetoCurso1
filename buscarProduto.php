@@ -17,27 +17,22 @@ if(isset($_POST['btnBuscar'])){
         while($produtoBuscado = $ExeQrBuscarProdutosTipoP->fetch_assoc()){
             include "buscarRes.php";
         }
-        echo '<script>alert("passou 1");</script>';
     }else{
         if($LinhasBuscarProdutosMarca){
             while($produtoBuscado = $ExeQrBuscarProdutosMarca->fetch_assoc()){
                 include_once "buscarRes.php";
             }
-            echo '<script>alert("passou 2");</script>';
         }else{
             if($LinhasBuscarProdutosTitul){
                 while($produtoBuscado = $ExeQrBuscarProdutosTitul->fetch_assoc()){
                     include_once "buscarRes.php";
                 }
-                echo '<script>alert("passou 3");</script>';
             }else{
                 if($LinhasBuscarProdutosDescr){
                     while($produtoBuscado = $ExeQrBuscarProdutosDescr->fetch_assoc()){
                         include_once "buscarRes.php";
                     }
-                    echo '<script>alert("passou 4");</script>';
                 }else{
-                    echo '<script>alert("passou nada :/");</script>';
                     include_once "404produtos.php";
                 }
             }

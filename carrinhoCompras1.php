@@ -23,8 +23,8 @@ if(isset($_GET['Produto'])){
             <?php
             if(!isset($_GET['car'])){
             ?>
+                <button type="submit" name="ComprarProduto" class="btn btn-success pull-right">Finalizar Compra</button>
                 <a href="index.php?url=Home" class="btn btn-danger pull-right">Continuar Comprando</a>
-                <button type="submit"  name="ComprarProduto" class="btn btn-success pull-right">Finalizar Compra</button>
             <?php
             }else{
                 ?>

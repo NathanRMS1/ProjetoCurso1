@@ -9,7 +9,6 @@ if(!isset($_SESSION['kolosus']['id'])){
 $user=$_SESSION['kolosus']['nome'];
 $queryComprado="SELECT * FROM finalizar_compra WHERE nome_comprador='$user'";
 $exeQrComprado=$conectar->query($queryComprado)or die(mysql_error());
-print_r($exeQrComprado);
 while($comprado=$exeQrComprado->fetch_assoc()){
     /*['idCompra']=$listaComprado['id_compra'];
     $comprado['nomeComprador']=$listaComprado['nome_comprador'];
@@ -23,11 +22,13 @@ while($comprado=$exeQrComprado->fetch_assoc()){
 <div class="ListaDeProdutosS">
     <div class="titulo_descri qq">          
         <h2 class="H-titulo">
-            <?php echo $comprado['produtoComprado'];?>
+            <?php echo $comprado['produto_comprado'];?>
         </h2>
         <br>
         <span class="H-subititulo">
-            <?php echo 'O senhor(a) '.$comprado['nomeComprador'].' comprou o produto '.$comprado['produtoComprado'].' na data '.$comprado['dataCompra'].' por ';$compradoV = $comprado['valorTotal'];$compradoV = number_format($compradoV,'2',',','.');        echo $compradoV.' '.$comprado['meioPagamento']?>
+            <?php echo 'O senhor(a) '.$comprado['nome_comprador'].' comprou o produto '.$comprado['produto_comprado'].' na data '.$comprado['data_compra'].' por ';
+            $compradoV = $comprado['valor_total'];$compradoV = number_format($compradoV,'2',',','.');
+            echo $compradoV.' '.$comprado['meio_pagamento']?>
         </span>
     </div>
 </div>
