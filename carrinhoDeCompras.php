@@ -35,7 +35,7 @@ while($listaCarrinho=$exeQrCarrinho->fetch_assoc()){
                 </span>
                 <div class="BotsEmLista">
                     <a href="index.php?url=Produto&id=<?php echo $dadosCarrinho['id']?>&car=<?php echo $idC?>" class="linkProdutos"><button type="button" class="btn btn-info BotsLista">Detalhes</button></a>
-                    <a href="index.php?url=carrinhoCompras&Produto=<?php echo $dadosCarrinho['id']?>&car=<?php echo $idC?>" class="AddCarrinho"><button type="button" class="btn btn-warning BotsLista">Comprar</button></a>
+                    <?php if($dadosCarrinho['qtd_estoque']>0 && isset($_SESSION['kolosus']['nome'])){?><a href="index.php?url=carrinhoCompras&Produto=<?php echo $dadosCarrinho['id']?>&car=<?php echo $idC?>" class="AddCarrinho"><button type="button" class="btn btn-warning BotsLista">Comprar</button></a><?php }?>
                 </div>
                 <div class="PrecosEmLista">
                     <span class="precoAvista">
